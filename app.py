@@ -81,13 +81,8 @@ def home_page():
 
 try:
     with st.sidebar:
-        # Menü başına şık logo ve başlık yerleşimi
-        st.image(LOGO_URL, use_container_width=True)
-        st.markdown(f"""
-        <div style="text-align: center; padding-bottom: 20px; border-bottom: 2px dashed #E2E8F0; margin-bottom: 20px;">
-            <div style="font-family: 'Nunito', sans-serif; font-size: 1.4rem; font-weight: 800; color: #6366F1; letter-spacing: 0.5px;">SenemanHUB</div>
-        </div>
-        """, unsafe_allow_html=True)
+        # Sadece logo yerleşimi (genişlik 180)
+        st.sidebar.image(LOGO_URL, width=180)
 
     pg = st.navigation({
         "🏠 SenemanHUB": [
