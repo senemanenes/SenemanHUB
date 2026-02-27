@@ -30,9 +30,22 @@ st.markdown(f'''
 # Hide Streamlit UI elements (Header, Footer, Menu)
 st.markdown("""
     <style>
+    /* Sağ üstteki üç nokta menüsünü ve Deploy butonunu gizle */
     #MainMenu {visibility: hidden;}
+    .stAppDeployButton {display: none;}
+    
+    /* Alttaki 'Made with Streamlit' yazısını gizle */
     footer {visibility: hidden;}
-    header {visibility: hidden;}
+    
+    /* Üst barı (header) tamamen gizleme, sadece içeriğini temizle */
+    /* Böylece yan menü açma butonu (sol üstteki ok) görünür kalır */
+    header {background-color: rgba(0,0,0,0);} 
+    
+    /* Yan menü kapalıyken çıkan o küçük açma düğmesini zorla görünür yap */
+    button[kind="header"] {
+        visibility: visible !important;
+        color: white !important;
+    }
     </style>
 """, unsafe_allow_html=True)
 
