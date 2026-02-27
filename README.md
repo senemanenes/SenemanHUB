@@ -19,3 +19,4 @@ SenemanHUB, sadece bir kelime ezberleme aracı değil, aynı zamanda **Gemini AI
 * **Veritabanı:** Google Sheets API (gspread)
 * **Barındırma:** Streamlit Cloud
 
+Developed by Enes SENEMAN
