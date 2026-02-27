@@ -2,10 +2,17 @@ import streamlit as st
 
 st.set_page_config(
     page_title="🏠 SenemanHub",
-    page_icon="🏠",
+    page_icon="https://raw.githubusercontent.com/senemanenes/SenemanHUB/main/logo.png",
     layout="centered",
     initial_sidebar_state="collapsed"
 )
+
+LOGO_URL = "https://raw.githubusercontent.com/senemanenes/SenemanHUB/main/logo.png"
+
+st.markdown(f"""
+<link rel="apple-touch-icon" href="{LOGO_URL}">
+<link rel="icon" href="{LOGO_URL}">
+""", unsafe_allow_html=True)
 
 def home_page():
     # Shared Base CSS For The App Homepage
@@ -76,6 +83,15 @@ def home_page():
     """, unsafe_allow_html=True)
 
 try:
+    with st.sidebar:
+        # Menü başına şık logo ve başlık yerleşimi
+        st.markdown(f"""
+        <div style="text-align: center; padding-bottom: 20px; border-bottom: 2px dashed #E2E8F0; margin-bottom: 20px;">
+            <img src="{LOGO_URL}" width="120" style="margin-bottom: 10px; border-radius: 10px;">
+            <div style="font-family: 'Nunito', sans-serif; font-size: 1.4rem; font-weight: 800; color: #6366F1; letter-spacing: 0.5px;">SenemanHUB</div>
+        </div>
+        """, unsafe_allow_html=True)
+
     pg = st.navigation({
         "🏠 SenemanHUB": [
             st.Page(home_page, title="🏠 Ana Sayfa", default=True),

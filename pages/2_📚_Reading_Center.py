@@ -95,7 +95,10 @@ else:
 
 current_text = st.session_state.get("reading_current_text", "")
 if current_text:
-    body_html = md.markdown(current_text, extensions=["extra", "nl2br"], output_format="html")
+    # 1. Convert Markdown to HTML first so ## and ** are parsed correctly
+    body_html = md.markdown(current_text, extensions=["extra", "nl2br"])
+    
+    # 2. Inject the parsed HTML into our stylish container
     custom_css = f"""
 <div style="
     background-color: rgba(255, 255, 255, 0.05); 
