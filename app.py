@@ -10,16 +10,14 @@ LOGO_URL = "https://raw.githubusercontent.com/senemanenes/DjangoAbiApp/main/logo
 
 st.markdown(f'''
 <head>
+    <link rel="manifest" href="data:application/manifest+json,{{%22name%22:%22SenemanHUB%22,%22short_name%22:%22SenemanHUB%22,%22start_url%22:%22/%22,%22display%22:%22standalone%22,%22icons%22:[{{%22src%22:%22{LOGO_URL}%22,%22sizes%22:%22512x512%22,%22type%22:%22image/png%22}}]}}">
     <link rel="apple-touch-icon" href="{LOGO_URL}">
-    <link rel="apple-touch-startup-image" href="{LOGO_URL}">
     <link rel="icon" type="image/png" href="{LOGO_URL}">
-    <link rel="shortcut icon" href="{LOGO_URL}">
-    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#1e1e1e">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="SenemanHUB">
     <meta name="apple-mobile-web-app-title" content="SenemanHUB">
-    <meta name="theme-color" content="#1e1e1e">
-    <meta name="msapplication-navbutton-color" content="#1e1e1e">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 ''', unsafe_allow_html=True)
@@ -116,8 +114,8 @@ def home_page():
 
 try:
     with st.sidebar:
-        # Sadece logo yerleşimi (genişlik 180)
-        st.sidebar.image(LOGO_URL, width=180)
+        # Sadece logo yerleşimi (genişlik 150)
+        st.sidebar.image(LOGO_URL, width=150)
 
     pg = st.navigation({
         "🏠 SenemanHUB": [
