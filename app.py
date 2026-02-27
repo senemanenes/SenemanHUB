@@ -8,8 +8,33 @@ st.set_page_config(
 
 LOGO_URL = "https://raw.githubusercontent.com/senemanenes/DjangoAbiApp/main/logo.png"
 
-st.markdown('<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/senemanenes/DjangoAbiApp/main/logo.png">', unsafe_allow_html=True)
-st.markdown('<link rel="icon" href="https://raw.githubusercontent.com/senemanenes/DjangoAbiApp/main/logo.png">', unsafe_allow_html=True)
+st.markdown(f'''
+<!-- Apple / iOS iin ikonlar -->
+<link rel="apple-touch-icon" sizes="180x180" href="{LOGO_URL}">
+<link rel="apple-touch-startup-image" href="{LOGO_URL}">
+
+<!-- Android ve Genel Tarayıcılar (Chrome vs.) İçin Zorunlu PWA İkonları -->
+<link rel="icon" type="image/png" sizes="192x192" href="{LOGO_URL}">
+<link rel="icon" type="image/png" sizes="512x512" href="{LOGO_URL}">
+<link rel="shortcut icon" href="{LOGO_URL}">
+
+<!-- Web App Meta Verileri -->
+<meta name="theme-color" content="#121826">
+<meta name="apple-mobile-web-app-title" content="SenemanHUB">
+<meta name="application-name" content="SenemanHUB">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+''', unsafe_allow_html=True)
+
+# Hide Streamlit UI elements (Header, Footer, Menu)
+st.markdown("""
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    </style>
+""", unsafe_allow_html=True)
 
 def home_page():
     # Shared Base CSS For The App Homepage
